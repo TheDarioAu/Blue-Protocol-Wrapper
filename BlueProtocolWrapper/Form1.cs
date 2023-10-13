@@ -58,6 +58,7 @@ namespace BlueProtocolWrapper
         }
         private void ClosedApp(object sender, EventArgs e)
         {
+            //Not sure if this works, should close game when wrapper is closed, 
             if (gameProcess != null)
             {
                 gameProcess.Kill();
@@ -71,13 +72,11 @@ namespace BlueProtocolWrapper
         {
             string path = txtExecutablePath.Text;
             // Save the path to a configuration file or any preferred storage method
-            // Example: Save it to a text file
             System.IO.File.WriteAllText("path.txt", path);
         }
         private void LoadPath(object sender, EventArgs e)
         {
             // Load the saved path from the configuration file or any preferred storage method
-            // Example: Load it from a text file
             if (System.IO.File.Exists("path.txt"))
             {
                 string path = System.IO.File.ReadAllText("path.txt");
